@@ -1,17 +1,14 @@
 import * as React from "react";
-import {AppBar, Box, Toolbar, IconButton, Typography, Menu, Container, Button, MenuItem} from "@mui/material"
-
+import { AppBar, Box, Toolbar, IconButton, Typography, Menu, Container, Button, MenuItem } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
+import { Link } from "react-router-dom";
 
 import Logo from "./Logo";
 
 const pages = ["Services", "About"];
 
 function NavBar() {
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-    null
-  );
+  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -24,11 +21,24 @@ function NavBar() {
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
-        <Toolbar disableGutters sx={{mt: 0.5}}>
-      
-          <Logo textType="h4" sx={{ fontStyle: "italic" }}></Logo>
+        <Toolbar disableGutters sx={{ mt: 0.5 }}>
+          
+          {/*--Logo--*/}
+          <Button
+            component={Link}
+            to="/"                 
+            sx={{
+              p: 0,                
+              minWidth: 0,           
+              textTransform: "none",
+              color: "inherit",
+            }}
+          >
+            <Logo textType="h4" sx={{ fontStyle: "italic" }} />
+          </Button>
 
-          {/* ---------- MOBILE: Hamburger Menu ---------- */}
+
+          {/* --MOBILE Hamburger Menu-- */}
           <Box sx={{ display: { xs: "flex", md: "none" }, ml: "auto" }}>
             <IconButton
               size="large"
@@ -56,28 +66,33 @@ function NavBar() {
               sx={{ display: { xs: "block", md: "none" } }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  component={Link}
+                  to={`/${page.toLowerCase()}`}
+                >
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
 
-          {/* ---------- DESKTOP: Nav Links  ---------- */}
+          {/* ---- DESKTOP Nav Links --- */}
           <Box sx={{ display: { xs: "none", md: "flex" }, ml: "auto" }}>
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={handleCloseNavMenu}
+                component={Link}
+                to={`/${page.toLowerCase()}`}
                 sx={{
                   my: 2,
-                  color: "white",
+                  color: "white",          
                   display: "block",
-                  textTransform: "none", 
-                  transition: "all 0.3s ease",
+                  textTransform: "none",
+                  px: 2,
                   "&:hover": {
-                    color: "secondary.main", 
-                    backgroundColor: "rgba(255,255,255,0.1)", 
+                    color: "secondary.main",      
                   },
                 }}
               >
@@ -85,6 +100,7 @@ function NavBar() {
               </Button>
             ))}
           </Box>
+
         </Toolbar>
       </Container>
     </AppBar>

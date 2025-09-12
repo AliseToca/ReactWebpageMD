@@ -20,9 +20,8 @@ function NavBar() {
 
   return (
     <AppBar position="static">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters sx={{ mt: 0.5 }}>
-          
+      <Container maxWidth="xl" sx={{}}>
+        <Toolbar disableGutters sx={{ mt: 0.5, paddingInline: 10}}>
           {/*--Logo--*/}
           <Button
             component={Link}
@@ -80,19 +79,25 @@ function NavBar() {
 
           {/* ---- DESKTOP Nav Links --- */}
           <Box sx={{ display: { xs: "none", md: "flex" }, ml: "auto" }}>
-            {pages.map((page) => (
+            {pages.map((page, index) => (
               <Button
                 key={page}
                 component={Link}
                 to={`/${page.toLowerCase()}`}
                 sx={{
                   my: 2,
-                  color: "white",          
+                  ml: 2,
+                  color: "white",
                   display: "block",
                   textTransform: "none",
                   px: 2,
+                  ...(index === pages.length - 1 && {
+                    bgcolor: "#eeb542ff",
+                    color: "black",
+                    "&:hover": { bgcolor: "secondary.dark", color: "white" },
+                  }),
                   "&:hover": {
-                    color: "secondary.main",      
+                    color: "secondary.main",
                   },
                 }}
               >

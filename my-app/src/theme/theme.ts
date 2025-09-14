@@ -6,15 +6,18 @@ const theme = createTheme({
   palette: {
     primary: {
       main: '#14110F', 
+      light: '#1a1614ff',
     },
     secondary: {
       main: '#FFD902', 
+      light: '#ebd761ff',
+      dark: '#e0bb03ff',
     },
     error: {
       main: red.A400,
     },
     background: {
-      default: '#f5f5f5', 
+      default: '#ffffffff', 
     },
   },
   typography: {
@@ -50,15 +53,6 @@ const theme = createTheme({
     },
     body2: {
       fontSize: '0.875rem',
-    },
-  },
-  breakpoints: {
-    values: {
-      xs: 0,
-      sm: 600,
-      md: 900,
-      lg: 1200,
-      xl: 1350,
     },
   },
   components: {

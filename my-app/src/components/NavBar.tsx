@@ -19,7 +19,7 @@ function NavBar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" >
       <Container maxWidth="xl">
         <Toolbar  sx={{ mt: 0.5}}>
           <Button

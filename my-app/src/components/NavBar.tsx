@@ -21,7 +21,7 @@ function NavBar() {
   return (
     <AppBar position="static">
       <Container maxWidth="xl" sx={{}}>
-        <Toolbar disableGutters sx={{ mt: 0.5, paddingInline: 10}}>
+        <Toolbar disableGutters sx={{ mt: 0.5}}>
           {/*--Logo--*/}
           <Button
             component={Link}
@@ -91,14 +91,15 @@ function NavBar() {
                   display: "block",
                   textTransform: "none",
                   px: 2,
-                  ...(index === pages.length - 1 && {
-                    bgcolor: "#eeb542ff",
-                    color: "black",
-                    "&:hover": { bgcolor: "secondary.dark", color: "white" },
-                  }),
                   "&:hover": {
                     color: "secondary.main",
                   },
+                  ...(index === pages.length - 1 && {
+                    bgcolor: "secondary.main",
+                    color: "black",
+                    "&:hover":
+                      { bgcolor: "secondary.dark"},
+                  }),
                 }}
               >
                 {page}

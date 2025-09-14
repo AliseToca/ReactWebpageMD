@@ -8,8 +8,8 @@ import Container from "@mui/material/Container";
 function App() {
   return (
     <Router>
-      <NavBar />
-      <Container>
+       <NavBar />
+      <Container maxWidth="xl"> 
         <Routes>
         <Route path="/services" element={<Services />} />
         <Route path="/about" element={<About />} />

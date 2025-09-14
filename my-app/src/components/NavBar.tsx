@@ -20,9 +20,8 @@ function NavBar() {
 
   return (
     <AppBar position="static">
-      <Container maxWidth="xl" sx={{}}>
-        <Toolbar disableGutters sx={{ mt: 0.5}}>
-          {/*--Logo--*/}
+      <Container maxWidth="xl">
+        <Toolbar  sx={{ mt: 0.5}}>
           <Button
             component={Link}
             to="/"                 

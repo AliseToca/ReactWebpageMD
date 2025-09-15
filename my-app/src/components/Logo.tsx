@@ -27,7 +27,7 @@ function Logo({textType, sx}: LogoProps){
                     ...sx, // merge external sx
                     }}
                 >
-                    ELECTRIO
+                    FLASHIO
             </Typography>
         </Box>
     );

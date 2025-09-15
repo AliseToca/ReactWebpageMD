@@ -4,6 +4,7 @@ import Services from "./pages/Services";
 import About from "./pages/About";
 import Home from "./pages/Home";
 import Container from "@mui/material/Container";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
       </Routes>
       </Container>
+      <Footer></Footer>
     </Router>
   );
 }

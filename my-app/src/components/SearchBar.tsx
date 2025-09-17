@@ -16,21 +16,15 @@ function SearchBar({ value, onChange, onSearch }: SearchBarProps) {
       placeholder="Search..."
       value={value}
       onChange={(e) => onChange(e.target.value)}
-      InputProps={{
+      slotProps={{
+      input: {
         startAdornment: (
           <InputAdornment position="start">
             <SearchIcon />
           </InputAdornment>
-        ),
-        endAdornment: onSearch && (
-          <InputAdornment position="end">
-            <IconButton onClick={onSearch}>
-              <SearchIcon />
-            </IconButton>
-          </InputAdornment>
-        ),
-      }}
-      sx={{ borderRadius: "999px", backgroundColor: "white" }}
+        )
+      },
+    }}
     />
   );
 }

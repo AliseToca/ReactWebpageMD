@@ -27,8 +27,6 @@ function ContactForm() {
     message: "",
   });
 
-  const [setView] = useState<"list" | "module" | "quilt" | null>("list");
-
   // form input handler
   const handleFormChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>

@@ -5,7 +5,7 @@ function Section() {
   return (
     <Box
       sx={{
-        height: "calc(100vh - 64px)",
+        height: { xs: "130vh", md: "calc(100vh - 64px)"} ,
         bgcolor: "primary.main",
         width: "99.5vw",
         position: "relative",
@@ -13,13 +13,14 @@ function Section() {
         right: "50%",
         ml: "-50vw",
         paddingInline: 5,
+        pb: 2,
       }}
     >
       <Container
         maxWidth="xl"
         sx={{
           display: "flex",
-          flexDirection: { xs: "column", md: "row" }, 
+          flexDirection: { xs: "column", md: "row" }, // stack on mobile
           height: "100%",
         }}
       >
@@ -29,12 +30,12 @@ function Section() {
             flex: 1,
             flexDirection: "column",
             display: "flex",
-            alignItems: { xs: "center", md: "flex-start" }, 
+            alignItems: { xs: "center", md: "flex-start" },
             justifyContent: "center",
-            mb: { xs: 4, md: 0 }, 
+            mb: { xs: 4, md: 0 },
           }}
         >
-          <Typography variant="h1" color="#f4f4f4ff" p={3}>
+          <Typography variant="h1" textAlign="left" color="#f4f4f4ff" p={3}>
             The best services world wide
           </Typography>
 
@@ -59,14 +60,15 @@ function Section() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            height: { xs: "60vh", md: "100%" }, // bigger on mobile
           }}
         >
           <Button
             component={Link}
             to="/services"
             sx={{
-              width: { xs: "100%", md: "100%" },
-              height: { xs: "auto", md: "100%" }, 
+              width: "100%",
+              height: "100%",
             }}
           >
             <Box
@@ -74,8 +76,8 @@ function Section() {
               src="https://images.pexels.com/photos/518244/pexels-photo-518244.jpeg"
               alt="Service"
               sx={{
-                width: { xs: "90%", md: "70%" },
-                height: { xs: "auto", md: "70%" },
+                width: { xs: "100%", md: "70%" },
+                height: { xs: "100%", md: "70%" },
                 objectFit: "cover",
                 borderRadius: 2,
                 filter: "grayscale(100%)",

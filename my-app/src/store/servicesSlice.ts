@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export interface Service {
-  id: string;
+  id: number;
   title: string;
   description: string;
   price: number;

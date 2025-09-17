@@ -1,4 +1,5 @@
 import { Box, Typography, Link, Container } from "@mui/material";
+import Logo from "./Logo";
 
 export default function Footer() {
   return (
@@ -12,9 +13,18 @@ export default function Footer() {
       }}
     >
       <Container maxWidth="xl" sx={{ display: "flex", flexDirection: { xs: "column", md: "row" }, justifyContent: "space-between", alignItems: "center" }}>
-        <Typography variant="body2">
-          &copy; {new Date().getFullYear()} My Electric Services. All rights reserved.
-        </Typography>
+        <Box 
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: 2,
+          }}>
+          <Logo textType="h4" sx={{ fontStyle: "italic" }}></Logo>
+
+          <Typography variant="body2">
+            &copy; 2025 My Services. All rights reserved.
+          </Typography>
+        </Box>
 
         <Box sx={{ display: "flex", gap: 2, mt: { xs: 2, md: 0 } }}>
           <Link href="/" color="inherit" underline="hover">
